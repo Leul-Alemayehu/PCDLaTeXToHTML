@@ -1,1 +1,2 @@
-ONLY use $$ for inline math, and \[\] for display math.
+- ONLY use $$ for inline math, and \[\] for display math.
+- Nesting is handled very poorly
