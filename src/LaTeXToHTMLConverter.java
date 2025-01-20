@@ -147,6 +147,8 @@ public class LaTeXToHTMLConverter extends LaTeXSubsetBaseVisitor<String> {
         } else if (commandName.equals("\\ref")) {
             String label = ctx.TEXT().getText();
             return labels.containsKey(label) ? "<a href='#" + label + "'>" + labels.get(label) + "</a>" : "<em>[labeling undefined]</em>";
+        } else if(commandName.equals("\\include")){
+            System.out.println("Semantics Warning: \\include recognized but ignored");
         }
         System.out.println("Warning: unknown command: " + commandName);
         return null; // Important: Return null if the command is not handled
